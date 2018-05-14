@@ -9,7 +9,7 @@ function HttpRequest(url, callback) {
             if (tempRequest.status == 200) {
                 callback(tempRequest.responseText);
             } else {
-                alert("An error occurred trying to contact the server.";)
+                alert("An error occurred trying to contact the server.");
             }
         }
     }
