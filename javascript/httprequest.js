@@ -1,3 +1,5 @@
+// This is an AJAX method!
+
 function HttpRequest(url, callback) {
     this.request = new XMLHttpRequest();
     this.request.open("GET", url);
