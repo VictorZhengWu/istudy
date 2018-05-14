@@ -1,0 +1,354 @@
+软件管理 apt ( Advanced Packaging Tool ) , 他可以自动下载、配置、安装软件包；简化了Linux系统上的。
+Debian及衍生版中都包含了apt。
+apt-cache search package 搜索包
+apt-cache show package 获取包的相关信息，如说明、大小、版本等
+sudo apt-get install package 安装包
+sudo apt-get install package –reinstall 重新安装包
+sudo apt-get -f install 强制安装
+sudo apt-get remove package 删除包
+sudo apt-get remove package –purge 删除包，包括删除配置文件等
+sudo apt-get autoremove 自动删除不需要的包
+sudo apt-get update 更新源
+sudo apt-get upgrade 更新已安装的包
+sudo apt-get dist-upgrade 升级系统
+sudo apt-get dselect-upgrade 使用 dselect 升级
+apt-cache depends package 了解使用依赖
+apt-cache rdepends package 了解某个具体的依赖
+sudo apt-get build-dep package 安装相关的编译环境
+apt-get source package 下载该包的源代码
+sudo apt-get clean && sudo apt-get autoclean 清理下载文件的存档
+sudo apt-get check 检查是否有损坏的依赖
+
+python声明编码格式：
+#!-*- coding: UTF-8 -*-
+#coding: utf-8
+#!-*- coding: GBK -*-
+
+Python内部提供一个 sys 的模块，其中的 sys.argv 用来捕获执行执行python脚本时传入的参数
+
+input函数接受的输入都被认作是字符串类型，即使输入的是数字。
+
+输入密码时，如果想要不可见，需要利用getpass 模块中的 getpass方法，即：
+import getpass 
+pwd = getpass.getpass("请输入密码：")  # 将用户输入的内容赋值给 name 变量
+
+缩进级别必须保持一致。Tab键和空格键不认为是4个空格，但可以把Tab键设置成4个空格键。
+
+变量名区分大小写。
+
++号可用于字符串的拼接，连接两个字符串。
+
+可以进行连续比较，如 a<b<c 或 a>=b>=c。
+
+print("hello, world!", end="_")
+print语句中的end参数缺省值是换行符。
+但在不同系统中，换行符的表示不一样。
+Linux/Unix中，换行符为"\n"，
+Windows中，换行符为"\r\n"，
+MacOS中，换行符为"\r"。
+print() 可表示换行。
+
+程序中用exit()退出程序。
+可加入字符串表示退出信息，例如：
+exit("Program is terminated!")
+
+"str".isdigit() 用于判断输入的字符串是否为数字形式。
+
+占位符：
+%s -- 字符串
+%d -- 整数
+%f -- 浮点数
+
+for i in range(3):
+    ''' coding...... '''
+        break
+    ''' coding...... '''
+else:
+    ''' coding...... '''
+这段代码中，如果循环被break中断，则不会执行else后的语句，
+如果循环被正常执行完成，则会执行else后的语句。
+注意，for循环可以和else配合，但不可以和elif配合。
+类似地，while循环体也可以和else配合，但不可以和elif配合。
+
+列表:
+del方法用索引删除列表内容。
+remove方法需要直接指明内容，而不是索引。
+pop方法直接指定索引值进行删除。pop方法还可返回删除值的内容。
+count方法计算某元素出现的次数。
+index方法取出某个值的索引值，即根据内容找位置。 
+reverse方法实现元素的倒序。
+sort方法实现元素的排序，python3.0里不同数据类型不能放在一起排序了。
+a+b方法得到新的列表，a和b本身不变；而a.extend(b)方法，a列表发生改变。
+
+字典的键值类型必须为不可变类型，例如，不可用一个列表作为字典的键，但可以用元组作为键。
+
+两个字符串拼接可以用c=a+b，但效率较低，可以使用字符串join方法，如：
+a='123'
+b='def'
+c=''.join([a,b])
+
+内置主要的字符串方法：
+string.capitalize()                                  把字符串的第一个字符大写
+string.center(width)                                 返回一个原字符串居中,并使用空格填充至长度 width 的新字符串
+string.count(str, begin=0, end=len(string))          返回 str 在 string 里面出现的次数，如果 begin 或者 end 指定则返回指定范围内 str 出现的次数
+string.decode(encoding='UTF-8', errors='strict')     以 encoding 指定的编码格式解码 string，如果出错默认报一个 ValueError 的异常，除非 errors 指定的是 'ignore' 或 者'replace'
+string.encode(encoding='UTF-8', errors='strict')     以 encoding 指定的编码格式编码 string，如果出错默认报一个ValueError 的异常，除非 errors 指定的是'ignore'或者'replace'
+string.endswith(obj, begin=0, end=len(string))       检查字符串是否以 obj 结束，如果begin 或者 end 指定则检查指定的范围内是否以 obj 结束，如果是，返回 True,否则返回 False.
+string.expandtabs(tabsize=8)                         把字符串 string 中的 tab 符号转为空格，tab 符号默认的空格数是 8。
+string.find(str, beg=0, end=len(string))             检测 str 是否包含在 string 中，如果 beg 和 end 指定范围，则检查是否包含在指定范围内，如果是返回开始的索引值，否则返回-1
+string.index(str, begin=0, end=len(string))          跟find()方法一样，只不过如果str不在 string中会报一个异常.
+string.isalnum()                                     如果 string 至少有一个字符并且所有字符都是字母或数字则返回 True,否则返回 False
+string.isalpha()                                     如果 string 至少有一个字符并且所有字符都是字母则返回 True,否则返回 False
+string.isdecimal()                                   如果 string 只包含十进制数字则返回 True 否则返回 False.
+string.isdigit()                                     如果 string 只包含数字则返回 True 否则返回 False.
+string.islower()                                     如果 string 中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是小写，则返回 True，否则返回 False
+string.isnumeric()                                   如果 string 中只包含数字字符，则返回 True，否则返回 False
+string.isspace()                                     如果 string 中只包含空格，则返回 True，否则返回 False.
+string.istitle()                                     如果 string 是标题化的(见 title())则返回 True，否则返回 False
+string.isupper()                                     如果 string 中包含至少一个区分大小写的字符，并且所有这些(区分大小写的)字符都是大写，则返回 True，否则返回 False
+string.join(seq)                                     以 string 作为分隔符，将 seq 中所有的元素(的字符串表示)合并为一个新的字符串
+string.ljust(width)                                  返回一个原字符串左对齐,并使用空格填充至长度 width 的新字符串
+string.lower()                                       转换 string 中所有大写字符为小写.
+string.lstrip()                                      截掉 string 左边的空格
+string.maketrans(intab, outtab)                      maketrans() 方法用于创建字符映射的转换表，对于接受两个参数的最简单的调用方式，第一个参数是字符串，表示需要转换的字符，第二个参数也是字符串表示转换的目标。
+max(str)                                             返回字符串 str 中最大的字母。
+min(str)                                             返回字符串 str 中最小的字母。
+string.partition(str)                                有点像 find()和 split()的结合体,从 str 出现的第一个位置起,把 字 符 串 string 分 成 一 个 3 元 素 的 元 组 (string_pre_str,str,string_post_str),如果 string 中不包含str 则 string_pre_str == string.
+string.replace(str1, str2,  num=string.count(str1))  把 string 中的 str1 替换成 str2,如果 num 指定，则替换不超过 num 次.
+string.rfind(str, beg=0,end=len(string) )            类似于 find()函数，不过是从右边开始查找.
+string.rindex( str, beg=0,end=len(string))           类似于 index()，不过是从右边开始.
+string.rjust(width)                                  返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串
+string.rpartition(str)                               类似于 partition()函数,不过是从右边开始查找.
+string.rstrip()                                      删除 string 字符串末尾的空格.
+string.split(str="", num=string.count(str))          以 str 为分隔符切片 string，如果 num有指定值，则仅分隔 num 个子字符串
+string.splitlines(num=string.count('\n'))            按照行分隔，返回一个包含各行作为元素的列表，如果 num 指定则仅切片 num 个行.
+string.startswith(obj, begin=0,end=len(string))      检查字符串是否是以 obj 开头，是则返回 True，否则返回 False。如果begin 和 end 指定值，则在指定范围内检查.
+string.strip([obj])                                  在 string 上执行 lstrip()和 rstrip()
+string.swapcase()                                    翻转 string 中的大小写
+string.title()                                       返回"标题化"的 string,就是说所有单词都是以大写开始，其余字母均为小写(见 istitle())
+string.translate(str, del="")                        根据 str 给出的表(包含 256 个字符)转换 string 的字符,要过滤掉的字符放到 del 参数中
+string.upper()                                       转换 string 中的小写字母为大写
+
+一边循环一边计算的机制，称为生成器：generator。
+一种方法很简单，只要把一个列表生成式的[]改成()，就创建了一个generator，例如：
+g = (x * x for x in range(10))
+通过next()函数获得generator的下一个返回值：
+next(g)
+如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator
+
+
+
+time模块的主要函数
+time()      返回时间戳
+clock()
+sleep()
+gmtime()    转换时间戳为UTC格林威治时间的元组
+localtime()
+asctime()
+ctime()
+mktime()
+strftime()
+strptime()
+tzset()
+
+在类的方法顶以前加上@staticmethod，则该方法成为静态方法
+若加上@classmethod，则该方法成为类方法：
+class Foo：
+    @staticmethod
+    def func1():        # func1成为静态方法，静态方法不需要传参数
+        pass
+
+    @classmethod
+    def func2(cls):     # func2成为类方法，传递参数固定写cls，代表类名
+        pass
+静态方法与类方法之间没有太大差别
+
+在类中，字段变量或方法名前加两下划线“__”，则该变量或方法为私有，类的外部不可直接访问。比如：
+class Foo(object):
+    __name = "123"
+    def __show(self):
+        pass
+其中__name和__show均为私有。
+
+如果声明了一个类Foo和该类的一个实例obj，则
+obj = Foo() 将调用该类的__init__()方法，
+0bj()，或 Foo()()，将调用该类的__call__()方法；
+int(obj)，将调用该类的__int__()方法；
+str(obj) 或 print(obj)，将调用该类的__str__()方法；
+若两个实例对象相加“+”时，自动执行第一个对象的__add__()方法，并将第二个对象当作参数传递进入；
+其余减乘除等方法类似；
+
+a = obj[key]，将自动执行类中的__getitem__(self, key)方法；
+若要实现切片，依然使用__getitem__(self, key)方法，但需要对key进行处理，分离出起始步，终止步及步长，
+可以判断key是否为切片类slice，如 if type(key) == slice；
+obj[key] = value，将自动执行类中的__setitem__(self, key, value)方法；
+del obj[key]，将自动执行类中的__delitem__(self, key)方法；
+
+类中若实现__iter__()方法，则该类创建的对象为可迭代对象，obj.__iter__()的返回值为迭代器；
+可利用for循环，自动调用迭代器的next方法，实现遍历；
+
+__dict__，则可将对象中封装的内容通过字典形式返回；
+__doc__，则显示该类的注释，类的注释在类的声明下面紧接着处用""" """标明；
+
+所有的类其实都是type类的对象，
+class ReedSun(ShuaiGe):
+    shuai = True
+    def test(x):
+        return x+2
+就等价于
+type("ReedSun", (ShuaiGe,), {"shuai":True, "test":lambda x: x+2})
+属性和方法本质上都是方法
+
+每个对象在生成时，其实都是先执行其类的__call__()方法，__call__()方法再调用__new()方法，最后才执行__init__()方法
+
+元类的工作原理：
+class ReedSunMetaclass(type):
+    pass
+class Foo(object， metaclass = ReedSunMetaclass): 
+    pass
+class Bar(Foo):
+    pass
+首先，创建了一个元类ReedSunMetaclass，元类的类名建议总是以Metaclass结尾，以便清楚地表示这是一个元类，
+然后，又用元类ReedSunMetaclass创建了一个Foo类，Foo类的属性__metaclass__就变成了ReedSunMetaclass，
+最后，创建了一个子类Bar继承自Foo，
+对于父类Foo，Python会在类的定义中寻找__metaclass__属性，如果找到了，Python就会用它来创建类Foo，如果没有找到，就会用内建的type来创建这个类。很显然，它找到了。
+对于子类Bar, python会先在子类中寻找__metaclass__属性，如果找到了，Python就会用它来创建类Bar，如果没有找到，就再从父类中寻找，直到type。显然，它在父类中找到了。
+可以看到使用元类的一个好处了，即他可以让子类隐式的继承一些东西。
+
+///////////////////////////////////////////////////
+用一个实际例子来说明元类的用法
+ORM就是一个典型的使用元类的例子。ORM全称“Object Relational Mapping”，即对象-关系映射，就是把关系数据库的一行映射为一个对象，也就是一个类对应一个表，这样，写代码更简单，不用直接操作SQL语句。下面我就用这个ORM的例子来说明一下元类的用法。
+
+#ORM:object relational mapping 对象-关系映射
+#把关系数据库的一行映射为一个对象，也就是一个类对应一个表
+#ORM框架所有的类只能动态定义
+
+# 定义Field(定义域：元类遇到Field的方法或属性时即进行修改）
+class Field(object):
+
+    def __init__(self, name, column_type):  # column==>列类型
+        self.name = name
+        self.column_type = column_type
+
+    # 当用print打印输出的时候，python会调用他的str方法
+    # 在这里是输出<类的名字，实例的name参数(定义实例时输入)>
+    # 在ModelMetaclass中会用到
+    def __str__(self):
+        return "<%s:%s>" % (self.__class__.__name__, self.name)  # __class__获取对象的类，__name__取得类名
+
+# 进一步定义各种类型的Field
+class StringField(Field):
+
+    def __init__(self, name):
+        # super(type[, object-or-type])  返回type的父类对象
+        # super().__init()的作用是调用父类的init函数
+        # varchar(100)和bigint都是sql中的一些数据类型
+        super(StringField, self).__init__(name, "varchar(100)")  
+
+class IntegerField(Field):
+
+    def __init__(self, name):
+        super(IntegerField, self).__init__(name, "bigint")
+
+# 编写ModelMetaclass
+class ModelMetaclass(type):
+
+    # __new__方法接受的参数依次是：
+    # 1.当前准备创建的类的对象（cls）
+    # 2.类的名字（name）
+    # 3.类继承的父类集合(bases)
+    # 4.类的方法集合(attrs)
+    def __new__(cls, name, bases, attrs):
+        # 如果说新创建的类的名字是Model，那直接返回不做修改
+        if name == "Model":
+            return type.__new__(cls, name, bases, attrs)
+        print("Found model:%s" % name)
+        mappings = dict()
+        for k, v in attrs.items():
+            if isinstance(v, Field):
+                print("Found mappings:%s ==> %s" % (k, v))  # 找到映射， 这里用到上面的__str__
+                mappings[k] = v
+            # 结合之前，即把之前在方法集合中的零散的映射删除，
+            # 把它们从方法集合中挑出，组成一个大方法__mappings__
+            # 把__mappings__添加到方法集合attrs中
+        for k in mappings.keys():
+                attrs.pop(k)
+        attrs["__mappings__"] = mappings
+        attrs["__table__"] = name # 添加表名，假设表名与类名一致
+        return type.__new__(cls, name, bases, attrs)
+
+# 编写Model基类继承自dict中，这样可以使用一些dict的方法
+class Model(dict, metaclass=ModelMetaclass):
+
+    def __init__(self,  **kw):
+        # 调用父类，即dict的初始化方法
+        super(Model, self).__init__(**kw)
+
+    # 让获取key的值不仅仅可以d[k]，也可以d.k
+    def __getattr__(self, key):
+        try:
+            return self[key]
+        except KeyError:
+            raise AttributeError(r"'Model' object has no attribute '%s'" % key)
+
+    # 允许动态设置key的值，不仅仅可以d[k]，也可以d.k
+    def __setattr__(self, key, value):
+        self[key] = value
+
+    def save(self):
+        fields = []
+        params = []
+        args = []
+        # 在所有映射中迭代
+        for k, v in self.__mappings__.items():
+            fields.append(v.name)
+            params.append("?")
+            args.append(getattr(self, k, None))
+        sql = "insert into %s (%s) values (%s)" % (self.__table__, ",".join(fields), ",".join(params))
+        print("SQL: %s" % sql)
+        print("ARGS: %s" % str(args))
+
+# 这样一个简单的ORM就写完了
+# 下面实际操作一下，先定义个User类来对应数据库的表User
+class User(Model):
+    # 定义类的属性到列的映射
+    id = IntegerField("id")
+    name = StringField("username")
+    email = StringField("email")
+    password = StringField("password")
+
+# 创建一个实例
+u = User(id=12345, name="ReedSun", email="sunhongzhao@foxmail.com", password="nicaicai")
+u.save()
+///////////////////////////////////////////////////
+
+通过对象名称操作对象中的成员：
+getattr(obj, "attribut_name") 可以用属性名称获取属性值
+setattr(obj, "attribut_name", value) 可以用属性名称设置属性值
+hasattr(obj, "attribut_name") 可以判断对象中是否有对应的属性名称
+delattr(obj, "attribut_name") 可以删除对象中的对应的属性名称
+
+
+
+
+
+family = AF_INET    用于服务器之间的通信
+family = AF_UNIX    用于Unix不同进程间的通信
+SOCK_STREAM         用于TCP
+SOCK_Dgram          用于UDP
+仅服务器端需要为socket绑定IP和端口号并监听和执行accept阻塞，客户端只需要用connect方法连接即可。
+服务器端socket用listen方法可以限制需要监听的用户数量。
+
+server下的方法：
+bind()
+listen()
+accept()
+recv()      接收的是byte类型
+send()      传送的内容必须是byte类型
+sendall()   传送的内容必须是byte类型
+
+client下的方法：
+connect()
+
+
+int和byte之间不能互转，需通过str来转换
