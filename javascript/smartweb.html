@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>This is a page for HTML, CSS and Javascript study!</title>
+
+        <style>
+            .skin1 {
+                background-color:beige;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 18px;
+            }
+
+            .skin2 {
+                background-color:mistyrose;
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size: 18px;
+            }
+
+            #checkboxHint {
+                width: 200px;
+                height: 20px;
+                background-color:wheat;
+                border: 1px solid;
+                display: none;
+            }
+        </style>
+
+        <!-- <script src="httprequest.js"></script> -->
+        <script>
+            // Below three functions to change the skin of this webpage
+            function toSkin1() {
+                var body = document.getElementById("body")
+                body.className = "skin1"
+            }
+
+            function toSkin2() {
+                var body = document.getElementById("body")
+                body.className = "skin2"
+            }
+
+            // Below two functions to show or hide the hint for the checkbox
+            function showCheckboxHint() {
+                var divHint = document.getElementById("checkboxHint");
+                divHint.style.display = "block";
+            }
+
+            function hideCheckboxHint() {
+                var divHint = document.getElementById("checkboxHint");
+                divHint.style.display = "none";
+            }
+
+
+        </script>
+    </head>
+
+    <body id="body">
+        <h1>Now let's go!</h1>
+        <hr>
+
+        <h2>this is a skin selector sample</h2>
+        <input type="button" id="skin1" value="Skin1" onclick="toSkin1()">
+        <input type="button" id="skin2" value="Skin2" onclick="toSkin2()">
+        <input type="button" id="skin3" value="Skin3" onclick="toSkin3()">
+        <hr>
+
+        <h2>this is a hint sample</h2>
+        <input  type="checkbox" 
+                value="checkbox" 
+                onmouseover="showCheckboxHint()" 
+                onmouseout="hideCheckboxHint()">
+        This is a checkbox.
+        <div id="checkboxHint" display="none">Here is a hint....</div>
+        <hr>
+
+    </body>
+</html>
