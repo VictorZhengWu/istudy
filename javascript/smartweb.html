@@ -30,13 +30,18 @@
         <script>
             // Below three functions to change the skin of this webpage
             function toSkin1() {
-                var body = document.getElementById("body")
-                body.className = "skin1"
+                var body = document.getElementById("body");
+                body.className = "skin1";
             }
 
             function toSkin2() {
-                var body = document.getElementById("body")
-                body.className = "skin2"
+                var body = document.getElementById("body");
+                body.className = "skin2";
+            }
+
+            function noSkin() {
+                var body = document.getElementById("body");
+                body.className = "";
             }
 
             // Below two functions to show or hide the hint for the checkbox
@@ -59,9 +64,9 @@
         <hr>
 
         <h2>this is a skin selector sample</h2>
-        <input type="button" id="skin1" value="Skin1" onclick="toSkin1()">
+        <input type="button" id="skin1" value="skin1" onclick="toSkin1()">
         <input type="button" id="skin2" value="Skin2" onclick="toSkin2()">
-        <input type="button" id="skin3" value="Skin3" onclick="toSkin3()">
+        <input type="button" id="noskin" value="No Skin" onclick="noSkin()">
         <hr>
 
         <h2>this is a hint sample</h2>
