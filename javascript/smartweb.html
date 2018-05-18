@@ -61,6 +61,27 @@
                 boxStyle.style[arguments[2]] = arguments[3];
             }
 
+            window.onload = function() {
+                var t = document.getElementById("tab");
+                var btn = t.getElementsByTagName("input");
+                var tab = t.getElementsByTagName("div");
+
+                function hideAllTabs() {
+                    for (var i=0; i<tab.length; i++) {
+                        tab[i].style.display = "none";
+                    }
+                }
+                
+                for (var i=0; i<btn.length; i++) {
+                    btn[i].index = i;
+                    btn[i].onclick = function() {
+                        hideAllTabs();
+                        tab[this.index].style.display = "block";
+                    }
+                }
+
+            }
+
         </script>
     </head>
 
@@ -94,6 +115,21 @@
             <input type="button" value="set style 2" onclick="setStyle('height', '450px', 'background', 'blue')" style="margin: 5px">
             <hr>
         </div> 
+
+        <div id="tab">
+            <h2>this is a tab sample, important!!!</h2>
+            <input type="button" id="btn1" value="One" outline="none">
+            <input type="button" id="btn2" value="Two" border="none">
+            <input type="button" id="btn3" value="Three" border="none">
+            <input type="button" id="btn4" value="Four" border="none">
+            <div id="tab1" style="width: 200px; height: 200px; border: 1px solid; background:slategrey; display: block"><h3>this is tab 1</h3></div>
+            <div id="tab2" style="width: 200px; height: 200px; border: 1px solid; background:slategrey; display: none"><h3>this is tab 2</h3></div>
+            <div id="tab3" style="width: 200px; height: 200px; border: 1px solid; background:slategrey; display: none"><h3>this is tab 3</h3></div>
+            <div id="tab4" style="width: 200px; height: 200px; border: 1px solid; background:slategrey; display: none"><h3>this is tab 4</h3></div>
+
+            <hr>
+            
+        </div>
 
     </body>
 </html>
