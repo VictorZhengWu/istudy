@@ -55,6 +55,11 @@
                 divHint.style.display = "none";
             }
 
+            function setStyle() {
+                var boxStyle = document.getElementById("boxStyle");
+                boxStyle.style[arguments[0]] = arguments[1];
+                boxStyle.style[arguments[2]] = arguments[3];
+            }
 
         </script>
     </head>
@@ -62,21 +67,33 @@
     <body id="body">
         <h1>Now let's go!</h1>
         <hr>
+        
+        <div id="SkinSelector">
+            <h2>this is a skin selector sample</h2>
+            <input type="button" id="skin1" value="skin1" onclick="toSkin1()">
+            <input type="button" id="skin2" value="Skin2" onclick="toSkin2()">
+            <input type="button" id="noskin" value="No Skin" onclick="noSkin()">
+            <hr>
+        </div>
 
-        <h2>this is a skin selector sample</h2>
-        <input type="button" id="skin1" value="skin1" onclick="toSkin1()">
-        <input type="button" id="skin2" value="Skin2" onclick="toSkin2()">
-        <input type="button" id="noskin" value="No Skin" onclick="noSkin()">
-        <hr>
+        <div id="HintBox">
+            <h2>this is a hint sample</h2>
+            <input  type="checkbox" 
+                    value="checkbox" 
+                    onmouseover="showCheckboxHint()" 
+                    onmouseout="hideCheckboxHint()">
+            This is a checkbox.
+            <div id="checkboxHint" display="none">Here is a hint....</div>
+            <hr>
+        </div>
 
-        <h2>this is a hint sample</h2>
-        <input  type="checkbox" 
-                value="checkbox" 
-                onmouseover="showCheckboxHint()" 
-                onmouseout="hideCheckboxHint()">
-        This is a checkbox.
-        <div id="checkboxHint" display="none">Here is a hint....</div>
-        <hr>
+        <div id="SetStyle"> 
+            <h2>use function to set CCS style</h2>
+            <div id="boxStyle" style="width: 100px; border: 1px solid; margin: 5px">This is box</div>
+            <input type="button" value="set style 1" onclick="setStyle('width', '300px', 'background', 'red')" style="margin: 5px">
+            <input type="button" value="set style 2" onclick="setStyle('height', '450px', 'background', 'blue')" style="margin: 5px">
+            <hr>
+        </div> 
 
     </body>
 </html>
