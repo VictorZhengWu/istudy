@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>a test page</title>
+
+        <script>
+            var btn = document.getElementById("btn")
+            var dv = document.getElementById("div1")
+
+            function detectEvent(e) {
+                    var el = e.target
+                    
+                    alert(el)
+                }
+        
+        </script>
+    </head>
+
+    <body>
+        <h1>test page</h1>
+        <hr>
+
+        <input id="btn" type="button" value="test button" onclick="detectEvent(event)";>
+        <div id="div1" style="width: 300px; height: 200px; background-color: bisque; margin: 5px" onclick="detectEvent(event)";>test div</div>
+    </body>
+</html>
