@@ -7,3 +7,6 @@ Python is my favourite!
 
 ## Javascript
 Javascript is also very good.
+
+## GitHub
+GitHub command note
