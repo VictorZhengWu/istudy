@@ -24,3 +24,5 @@ git push origin master: 把本地代码推到远程master分支
 git pull origin master: 把远程最新的代码更新到本地
 git remote add origin git@github.com:stormzhang/test.git: 把本地项目与GitHub上的test项目进行关联，origin是给这个项目的远程仓库起的名字，远程仓库的地址是git@github.com:stormzhang/test.git
 git remote -v: 查看有哪些远程仓库
+
+--continue--
