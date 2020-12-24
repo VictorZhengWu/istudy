@@ -5,6 +5,7 @@ git status: 查看仓库状态
 git add: 将文件加入仓库缓存
 git rm --cached: 将加入仓库缓存的文件移除缓存
 git commit -m 'commit remark': 将文件提交，-m 代表是提交信息
+git reset: 把当前版本回退到上一个版本
 git log: 查看所有产生的 commit 记录
 git branch: 查看分支信息
 git branch aa: 创建一个名为aa的新分支
