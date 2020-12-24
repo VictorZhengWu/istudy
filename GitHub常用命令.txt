@@ -6,12 +6,14 @@ git add: 将文件加入仓库缓存
 git rm --cached: 将加入仓库缓存的文件移除缓存
 git commit -m 'commit remark': 将文件提交，-m 代表是提交信息
 git reset: 把当前版本回退到上一个版本
+git reset HEAD <file>: 可以把暂存区的修改撤销掉，重新放回工作区，当用HEAD时，表示最新的版本
 git log: 查看所有产生的 commit 记录
+git reflog: 用来记录每一次命令
 git branch: 查看分支信息
 git branch aa: 创建一个名为aa的新分支
 git checkout aa: 从当前分支切换到名为aa的分支上去
 git checkout -b aa: 一次性地创建一个名为aa的新分支并切换过去
-git checkout test.md: 将test.md文件还原，但该操作只能撤销还没有进入缓存区的修改
+git checkout --test.md: 将test.md文件还原，但该操作只能撤销还没有进入缓存区的修改
 git merge aa: 将分支aa中的内容合并到主分支master上来
 git branch -d aa: 删除aa分支
 git branch -D aa: 强制删除aa分支
