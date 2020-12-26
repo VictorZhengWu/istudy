@@ -19,8 +19,6 @@ git branch -d aa: 删除aa分支
 git branch -D aa: 强制删除aa分支
 git tag v1.0: 加入版本号
 git checkout v1.0: 切换到v1.0的代码状态
-ssh-keygen -t rsa -C "your_email@example.com": 创建SSH Key，“your_email@example.com”的部分是在创建账户时用的邮箱地址
-ssh -T git@github.com: 用私人密钥与GitHub 进行认证和通信测试
 git clone git@github.com:hirocastest/Hello-World.git: 将github上的仓库克隆到本地，git@github.com:hirocastest/Hello-World.git是在github上该仓库的SSH克隆地址
 git push: 更新GitHub上的仓库
 git push origin master: 把本地代码推到远程master分支
@@ -28,4 +26,9 @@ git pull origin master: 把远程最新的代码更新到本地
 git remote add origin git@github.com:stormzhang/test.git: 把本地项目与GitHub上的test项目进行关联，origin是给这个项目的远程仓库起的名字，远程仓库的地址是git@github.com:stormzhang/test.git
 git remote -v: 查看有哪些远程仓库
 
+
+ssh-keygen -t rsa -C "your_email@example.com": 创建SSH Key，“your_email@example.com”的部分是在创建账户时用的邮箱地址
+eval "$(ssh-agent -s)"
+ssh-add -K ~/.ssh/id_rsa
+ssh -T git@github.com: 用私人密钥与GitHub 进行认证和通信测试
 --continue--
