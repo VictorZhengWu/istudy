@@ -1,4 +1,5 @@
-################################
+################################################################
+## 模板
 name = input('Please input your name: ')
 age = input('Please input your age: ')
 job = input('Please input your job: ')
